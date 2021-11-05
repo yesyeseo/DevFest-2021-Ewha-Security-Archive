@@ -1,12 +1,12 @@
-# 사용자 중요 정보 평문 저장/전송
+## 사용자 중요 정보 평문 저장/전송
 
-## 정의
+### 정의
 
 - 데이터를 평문으로 통신 채널을 통해 송수신할 경우, 인증받지 않은 사용자에 의해 발생한 `스니핑`을 통해 보안과 관련된 중요한  데이터가 노출될 수 있다.
     - `스니핑` : 네트워크상에서 다른 상대방들의 패킷 교환을 엿듣는 행위. ex) 전화 도청
     
 
-## 안전한 코딩기법
+### 안전한 코딩기법
 
 - 중요한 정보를 저장할 때에는 반드시 `암호화`하여 저장한다.
 - 중요한 정보를 통신 채널을 통해 전송할 때에도 반드시 `암호화` 과정을 거쳐야 한다.
@@ -14,7 +14,7 @@
     - 보안 채널을 사용하거나 브라우저 쿠키에 중요 데이터를 저장하는 경우, `setSecure(true)` 메소드를 통해 쿠키 객체에 보안속성을 설정하여 중요정보 노출을 방지할 수 있다.
     - 보안속성이 설정된 쿠키는 HTTP로는 전송되지 않으므로, 중요 데이터를 저장한 쿠키를 HTTP로 전송하기 위해서는 보안 속성을 대신하여 반드시 암호화를 적용해야 한다.
 
-## JAVA 예제
+### JAVA 예제
 
 ```java
 String password = getPassword();
@@ -23,7 +23,7 @@ o.write(password);
 
 패스워드를 암호화하지 않고 평문으로 전송하고 있다. 이 경우에 패킷 스니핑을 통해 패스워드가 노출될 수 있다.
 
-### 안전하지 않은 코드
+**안전하지 않은 코드**
 
 ```java
 try {
@@ -47,7 +47,7 @@ byte[] encPassword = c.update(password.getBytes());
 
 패스워드를 네트워크를 통해 서버로 전송하기 전에 암호화하여 안전한 프로그램이다. 이 예제는 AES 암호화 알고리즘을 사용하였다.
 
-### 안전한 코드
+**안전한 코드**
 
 ```java
 try {
@@ -63,7 +63,7 @@ try {
 ……
 ```
 
-## Android-JAVA 예제
+### Android-JAVA 예제
 
 ```java
 Socket socket = new Socket(hostname, port);
@@ -71,7 +71,7 @@ Socket socket = new Socket(hostname, port);
 
 일반적인 소켓 통신을 사용하여 네트워크를 통하여 데이터를 외부에 전송하고 있다. 마찬가지로 이 경우도 패킷 스니핑을 통하여 데이터의 내용이 노출될 수 있다.
 
-### 안전하지 않은 코드
+**안전하지 않은 코드**
 
 ```java
 public void onCreate(Bundle savedInstanceState) {
@@ -95,7 +95,7 @@ Socket socket = socketFactory.createSocket(hostname, port);
 
 민감한 정보를 네트워크를 통하여 서버에 전송하기 전에 최소한 128비트 길이의 키를 이용하여 암호하는 것이 바람직하다.
 
-### 안전한 코드
+**안전한 코드**
 
 ```java
 public void onCreate(Bundle savedInstanceState) {
@@ -111,7 +111,7 @@ public void onCreate(Bundle savedInstanceState) {
 }
 ```
 
-## C 예제
+### C 예제
 
 ```csharp
 fgets(passwd, sizeof(passwd), fp);
@@ -126,7 +126,7 @@ fgets(passwd, sizeof(passwd), fp);
 
 파일에서 읽어온 패스워드를 암호화 없이 직접 연결하고 있다.
 
-### 안전하지 않은 코드
+**안전하지 않은 코드**
 
 ```c
 int dbaccess(){
@@ -192,7 +192,7 @@ encPasswd = CkCrypt2_encryptStringENC(crypt, passwd);
 
 암호화된 패스워드를 사용한다.
 
-### 안전한 코드
+**안전한 코드**
 
 ```c
 int dbaccess(){
@@ -229,7 +229,7 @@ int dbaccess(){
 }
 ```
 
-## C# 예제
+### C# 예제
 
 ```csharp
 Message.Body = "Your password is: " + Server.HtmlEncode(password);
@@ -238,7 +238,7 @@ SmtpMail.Send(Message);
 
 패스워드를 암호화하지 않고 패스워드가 포함된 메시지를 네트워크를 통하여 전송하고 있다. 이 경우 또한 패킷스니핑을 통하여 패스워드가 노출될 수 있다.
 
-### 안전하지 않은 코드
+**안전하지 않은 코드**
 
 ```csharp
 public void EmailPassword_OnClick(object sender, EventArgs args)
@@ -282,7 +282,7 @@ String hashedPassword = System.Text.Encoding.ASCII.GetString(data);
 
 패스워드를 암호화하여 네트워크를 통해 전송한다.
 
-### 안전한 코드
+**안전한 코드**
 
 ```csharp
 public void EmailPassword_OnClick(object sender, EventArgs args)
