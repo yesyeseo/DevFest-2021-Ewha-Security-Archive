@@ -120,7 +120,6 @@ fgets(passwd, sizeof(passwd), fp);
 패스워드를 파일에서 읽어 오고 있다.
 
 ```csharp
-//패스워드의 암호화 없이 직접 연결합니다.
 (SQLCHAR*) passwd,
 ```
 
