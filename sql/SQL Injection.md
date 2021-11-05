@@ -92,7 +92,30 @@ finally { …… }
 
 ```
 
-## 5) 예제 [6]<br>
+**안전하지 않은 코드(C)** : <br>외부 입력이 SQL 퀴리에 어떠한 처리 없이 삽입됨
+
+```
+#include <stdlib.h>
+#include <sql.h>
+void Sql_process(SQLHSTMT sqlh)
+ {
+ char *query = getenv("query_string");
+   SQLExecDirect(sqlh, query, SQL_NTS);
+ }
+```
+
+**안전한 코드(C)** : <br>인자화된 쿼리 사용해 쿼리 구조 변경 방지
+
+```
+#include <sql.h>
+ void Sql_process(SQLHSTMT sqlh)
+ {
+ char *query_items = "SELECT * FROM items";
+ SQLExecDirect(sqlh, query_items, SQL_NTS);
+ }
+```
+
+## 5) 예제 [2]<br>
 
 > http request로부터 사용자 ID와 암호 추출해 SQL 쿼리 생성
 
@@ -229,7 +252,118 @@ public class SqlInjectionSample extends HttpServlet
 
 <br>
 
-## 6) 예제 [7] : Blind SQL injection 공격 구문<br>
+**안전하지 않은 코드(C)**:<br> queryStr의 외부 입력에서 `user_id`와 `password`의 값을 잘라 그대로 SQL문 인자 값으로 사용
+
+```
+static SQLHSTMT statmentHandle;
+const char * GetParameter(const char * queryString, const char * key);
+static const char * GET_USER_INFO_CMD = "get_user_info";
+static const char * USER_ID_PARAM = "user_id";
+static const char * PASSWORD_PARAM = "password";
+static const int MAX_QUERY_LENGTH = 256;
+const int EQUAL = 0;
+int main(void)
+{
+  SQLCHAR * queryStr;
+  queryStr = getenv("QUERY_STRING");
+  if (queryStr == NULL)
+   {
+   // Error 처리 루틴
+   ...
+    }
+   // 입력 값 가져오기
+char * command = GetParameter(queryStr, "command");
+if (strcmp(command, GET_USER_INFO_CMD) == EQUAL)
+ {
+ // userId와 password 값 가져오기
+ const char * userId = GetParameter(queryStr, USER_ID_PARAM);
+ const char * password = GetParameter(queryStr, PASSWORD_PARAM);
+
+ char query[MAX_QUERY_LENGTH];
+ sprintf(query, "SELECT * FROM members WHERE username= '%s' AND password ='%s'", userId, password);
+ SQLExecDirect(statmentHandle, query, SQL_NTS);
+ }
+ return 0;
+ }
+```
+
+<br>
+
+**안전한 코드(C)**:<br> `makeSecureString` 메소드를 통해 위험한 SQL 생성 유발하는 단어/특수문자 제거<br>
+`static const int`로 선언한 `MAX_USER_ID_LENGTH`와 `MAX_PASSWORD_LENGTH`에 설정한 값을 벗어나는 문자는 제거됨<br>
+`regexec` 메소드를 통해 정규식에 근거해 위험 문자는 제거하고 그 앞뒤를 연결함
+
+```
+ const char * GetParameter(const char * queryString, const char * key);
+ static const char * GET_USER_INFO_CMD = "get_user_info";
+ static const char * USER_ID_PARAM = "user_id";
+ static const char * PASSWORD_PARAM = "password";
+ static const int MAX_QUERY_LENGTH = 256;
+ static const int MAX_USER_ID_LENGTH = 8;
+ static const int MAX_PASSWORD_LENGTH = 16;
+ const char * makeSecureString(const char *str, int maxLength);
+ const int EQUAL = 0;
+ int main(void)
+ {
+ // 필터링에 사용할 정규식 설정
+ int reti = regcomp(&unsecurePattern, "[^[:alnum:]]|select|delete|update|insert|create|alter|drop", REG_ICASE | REG_EXTENDED);
+
+ // 정규식 설정이 실패했을 경우 나머지 퍼리를 하지 않고 강제 종료함
+ if (reti)
+ {
+ fprintf(stderr, "Could not compile regex\n");
+ exit(1);
+ }
+
+ SQLCHAR * queryStr;
+ queryStr = getenv("QUERY_STRING");
+ if (queryStr == NULL)
+ {
+ // 입력값이 null인 경우 Erorr 처리
+ ...
+ }
+ char * command = GetParameter(queryStr, "command");
+ if (strcmp(command, GET_USER_INFO_CMD) == EQUAL)
+ {
+ // 각 입력값을 쪼갠 후 makeSecureString함수로 필터링 거쳐 검증
+ const char * userId = GetParameter(queryStr, USER_ID_PARAM);
+ userId = makeSecureString(userId, MAX_USER_ID_LENGTH);
+ const char * password = GetParameter(queryStr, PASSWORD_PARAM);
+ password = makeSecureString(password, MAX_PASSWORD_LENGTH);
+
+ char query[MAX_QUERY_LENGTH];
+ sprintf(query, "SELECT * FROM members WHERE username= '%s' AND password ='%s'", userId, password);
+ SQLExecDirect(statmentHandle, query, SQL_NTS);
+ free(userId);
+ free(password);
+ }
+ regfree(&unsecurePattern);
+
+ return EXIT_SUCCESS;
+ }
+ // 입력값을 필터링해 검증하는 루틴
+ const char * makeSecureString(const char *str, int maxLength)
+ {
+ char * buffer = (char *) malloc(maxLength + 1);
+ char * originalStr = (char *)malloc(maxLength + 1);
+ strncpy(originalStr, str, maxLength);
+ originalStr[maxLength] = NULL;
+ regmatch_t mt;
+ const char * currentPos = originalStr;
+ // 정규식에 매칭되는 부분이 있으면 그 부분 건너뛰는 형태로 문자열 변결
+ while (regexec(&unsecurePattern, currentPos, 1, &mt, REG_NOTBOL) == 0)
+ {
+   strncat(buffer, currentPos, mt.rm_so);
+   currentPos += mt.rm_eo;
+ }
+ strcat(buffer, currentPos);
+ free(originalStr);
+ return buffer;
+}
+
+```
+
+## 6) 예제 [3] : Blind SQL injection 공격 구문<br>
 
 특정한 코드를 선별해 막는 블랙리스트에 의거한 필터링 방식 사용시 다양한 형태의 SQL 함수 이용한 공격방법을 참고해야 함<br>
 필터링 코드의 완성도는 블랙리스트를 만드는 작성자가 얼마나 공격 패턴을 많이 알고 있느냐에 따라 좌우됨
@@ -248,5 +382,3 @@ public class SqlInjectionSample extends HttpServlet
 |WAITFOR DELAY '0:0:10'-- |시스템 자원 소모 유도 |
 |MD5(), SHA1(), PASSWORD(), ENCODE(), COMPRESS(), ROW_COUNT(), SCHEMA(), VERSION() |위험한 함수 사용|
 |bulk insert foo from '\\YOURIPADDRESS\C$\x.txt'|Windows UNC Share를 악용|
-
-# C code 추가해야함...~!!!!
