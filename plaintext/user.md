@@ -23,7 +23,7 @@ o.write(password);
 
 패스워드를 암호화하지 않고 평문으로 전송하고 있다. 이 경우에 패킷 스니핑을 통해 패스워드가 노출될 수 있다.
 
-**안전하지 않은 코드**
+`안전하지 않은 코드`
 
 ```java
 try {
@@ -47,7 +47,7 @@ byte[] encPassword = c.update(password.getBytes());
 
 패스워드를 네트워크를 통해 서버로 전송하기 전에 암호화하여 안전한 프로그램이다. 이 예제는 AES 암호화 알고리즘을 사용하였다.
 
-**안전한 코드**
+`안전한 코드`
 
 ```java
 try {
@@ -71,7 +71,7 @@ Socket socket = new Socket(hostname, port);
 
 일반적인 소켓 통신을 사용하여 네트워크를 통하여 데이터를 외부에 전송하고 있다. 마찬가지로 이 경우도 패킷 스니핑을 통하여 데이터의 내용이 노출될 수 있다.
 
-**안전하지 않은 코드**
+`안전하지 않은 코드`
 
 ```java
 public void onCreate(Bundle savedInstanceState) {
@@ -95,7 +95,7 @@ Socket socket = socketFactory.createSocket(hostname, port);
 
 민감한 정보를 네트워크를 통하여 서버에 전송하기 전에 최소한 128비트 길이의 키를 이용하여 암호하는 것이 바람직하다.
 
-**안전한 코드**
+`안전한 코드`
 
 ```java
 public void onCreate(Bundle savedInstanceState) {
@@ -126,7 +126,7 @@ fgets(passwd, sizeof(passwd), fp);
 
 파일에서 읽어온 패스워드를 암호화 없이 직접 연결하고 있다.
 
-**안전하지 않은 코드**
+`안전하지 않은 코드`
 
 ```c
 int dbaccess(){
@@ -192,7 +192,7 @@ encPasswd = CkCrypt2_encryptStringENC(crypt, passwd);
 
 암호화된 패스워드를 사용한다.
 
-**안전한 코드**
+`안전한 코드`
 
 ```c
 int dbaccess(){
@@ -238,7 +238,7 @@ SmtpMail.Send(Message);
 
 패스워드를 암호화하지 않고 패스워드가 포함된 메시지를 네트워크를 통하여 전송하고 있다. 이 경우 또한 패킷스니핑을 통하여 패스워드가 노출될 수 있다.
 
-**안전하지 않은 코드**
+`안전하지 않은 코드`
 
 ```csharp
 public void EmailPassword_OnClick(object sender, EventArgs args)
@@ -282,7 +282,7 @@ String hashedPassword = System.Text.Encoding.ASCII.GetString(data);
 
 패스워드를 암호화하여 네트워크를 통해 전송한다.
 
-**안전한 코드**
+`안전한 코드`
 
 ```csharp
 public void EmailPassword_OnClick(object sender, EventArgs args)
