@@ -47,9 +47,9 @@ public void makeCookie(ServletRequest request) {
 
 ---
 
-## 😢 
+## 😢 쿠키 유효 시간 설정이 `상숫값`이 됨 
 
-`javax.servlet.http.Cookie.setMaxAge` 메소드 호출에 쿠키의 **유효시한 설정을 상숫값**으로 사용하여 프로그램의 취약점을 야기함.
+`javax.servlet.http.Cookie.setMaxAge` 메소드 호출에 쿠키의 **유효 기간 설정을 상숫값**으로 사용하여 프로그램의 취약점을 야기함.
 
 ```java
 ...
