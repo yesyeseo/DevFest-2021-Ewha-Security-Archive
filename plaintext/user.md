@@ -316,5 +316,3 @@ public void EmailPassword_OnClick(object sender, EventArgs args)
 	}
 }
 ```
-
-출처: [https://www.ahnlab.com/kr/site/securityinfo/secunews/secuNewsView.do?menu_dist=3&seq=5185](https://www.ahnlab.com/kr/site/securityinfo/secunews/secuNewsView.do?menu_dist=3&seq=5185)
