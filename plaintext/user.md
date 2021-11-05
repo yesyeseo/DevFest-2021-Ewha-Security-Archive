@@ -1,12 +1,12 @@
-## 사용자 중요 정보 평문 저장/전송
+# 사용자 중요 정보 평문 저장/전송
 
-### 정의
+## 정의
 
 - 데이터를 평문으로 통신 채널을 통해 송수신할 경우, 인증받지 않은 사용자에 의해 발생한 `스니핑`을 통해 보안과 관련된 중요한  데이터가 노출될 수 있다.
     - `스니핑` : 네트워크상에서 다른 상대방들의 패킷 교환을 엿듣는 행위. ex) 전화 도청
     
 
-### 안전한 코딩기법
+## 안전한 코딩기법
 
 - 중요한 정보를 저장할 때에는 반드시 `암호화`하여 저장한다.
 - 중요한 정보를 통신 채널을 통해 전송할 때에도 반드시 `암호화` 과정을 거쳐야 한다.
@@ -14,7 +14,7 @@
     - 보안 채널을 사용하거나 브라우저 쿠키에 중요 데이터를 저장하는 경우, `setSecure(true)` 메소드를 통해 쿠키 객체에 보안속성을 설정하여 중요정보 노출을 방지할 수 있다.
     - 보안속성이 설정된 쿠키는 HTTP로는 전송되지 않으므로, 중요 데이터를 저장한 쿠키를 HTTP로 전송하기 위해서는 보안 속성을 대신하여 반드시 암호화를 적용해야 한다.
 
-### JAVA 예제
+## JAVA 예제
 
 ```java
 String password = getPassword();
@@ -63,7 +63,7 @@ try {
 ……
 ```
 
-### Android-JAVA 예제
+## Android-JAVA 예제
 
 ```java
 Socket socket = new Socket(hostname, port);
@@ -111,7 +111,7 @@ public void onCreate(Bundle savedInstanceState) {
 }
 ```
 
-### C 예제
+## C 예제
 
 ```csharp
 fgets(passwd, sizeof(passwd), fp);
@@ -228,7 +228,7 @@ int dbaccess(){
 }
 ```
 
-### C# 예제
+## C# 예제
 
 ```csharp
 Message.Body = "Your password is: " + Server.HtmlEncode(password);
