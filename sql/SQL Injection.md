@@ -9,6 +9,7 @@
 ## 2) 공격 흐름도
 
 ![sql 공격 흐름도](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=http%3A%2F%2Fcfile2.uf.tistory.com%2Fimage%2F257C5938590F1A022239B4)
+[출처] JAVA 시큐어코딩 가이드 P.3
 
 - 사용자가 입력한 값을 필터링 없이 넘겨 받은 취약한 웹 어플리케이션은 **동적 쿼리(Dynamic Query)** 생성
 - 의도하지 않은 쿼리 생성으로 인한 정보유출 가능
@@ -32,7 +33,7 @@
 
 **안전하지 않은 코드(java)** : <br>`tablename`과 `name`에 대한 검증 수행 X
 
-```
+```java
 PreparedStatement stmt = null;
 
 try {
@@ -63,7 +64,7 @@ finally { …… }
 `setXXX` 메소드로 인자 부분 설정<br>
 -> 외부의 입력이 쿼리문의 구조 바꾸는 것 방지
 
-```
+```java
 ……
 PreparedStatement stmt = null;
 
@@ -94,7 +95,7 @@ finally { …… }
 
 **안전하지 않은 코드(C)** : <br>외부 입력이 SQL 퀴리에 어떠한 처리 없이 삽입됨
 
-```
+```C
 #include <stdlib.h>
 #include <sql.h>
 void Sql_process(SQLHSTMT sqlh)
@@ -106,7 +107,7 @@ void Sql_process(SQLHSTMT sqlh)
 
 **안전한 코드(C)** : <br>인자화된 쿼리 사용해 쿼리 구조 변경 방지
 
-```
+```C
 #include <sql.h>
  void Sql_process(SQLHSTMT sqlh)
  {
@@ -126,7 +127,7 @@ void Sql_process(SQLHSTMT sqlh)
 `SELECT * FROM members WHERE userId = 'guest' OR 'a'='a'-- AND password = ''`<br>
 WHERE절 항상 참 -> 올바른 암호가 아니여도 사용자 정보 조회/열람 가능
 
-```
+```java
 ……
 public class SqlInjectionSample extends HttpServlet
 {
@@ -159,7 +160,8 @@ public class SqlInjectionSample extends HttpServlet
 **안전한 코드(java)**: makeSecureString 적용<br>
 SQL 구문 생성 전, 외부로부터 입력된 ID와 암호를 `makeSecureString` 메소드를 통해 DB 쿼리 사용에 안전한 형태로 변경
 
-**makeSecureString**<br>
+### **makeSecureString**<br>
+
 정의
 
 - 3가지 제한 조건 적용해 일반 문자열을 쿼리 인자로 사용 가능한 안전한 문자열로 바꾸는 메소드
@@ -189,7 +191,7 @@ SQL 구문 생성 전, 외부로부터 입력된 ID와 암호를 `makeSecureStri
 
 그 외 문자열 길이 제한 낮춤, 정규식 포함 단어 늘림을 통해 보다 정밀한 방어 실현 가능
 
-```
+```java
 ……
 public class SqlInjectionSample extends HttpServlet
 {
@@ -254,7 +256,7 @@ public class SqlInjectionSample extends HttpServlet
 
 **안전하지 않은 코드(C)**:<br> queryStr의 외부 입력에서 `user_id`와 `password`의 값을 잘라 그대로 SQL문 인자 값으로 사용
 
-```
+```C
 static SQLHSTMT statmentHandle;
 const char * GetParameter(const char * queryString, const char * key);
 static const char * GET_USER_INFO_CMD = "get_user_info";
@@ -293,7 +295,7 @@ if (strcmp(command, GET_USER_INFO_CMD) == EQUAL)
 `static const int`로 선언한 `MAX_USER_ID_LENGTH`와 `MAX_PASSWORD_LENGTH`에 설정한 값을 벗어나는 문자는 제거됨<br>
 `regexec` 메소드를 통해 정규식에 근거해 위험 문자는 제거하고 그 앞뒤를 연결함
 
-```
+```C
  const char * GetParameter(const char * queryString, const char * key);
  static const char * GET_USER_INFO_CMD = "get_user_info";
  static const char * USER_ID_PARAM = "user_id";
@@ -319,7 +321,7 @@ if (strcmp(command, GET_USER_INFO_CMD) == EQUAL)
  queryStr = getenv("QUERY_STRING");
  if (queryStr == NULL)
  {
- // 입력값이 null인 경우 Erorr 처리
+ // 입력값이 null인 경우 Error 처리
  ...
  }
  char * command = GetParameter(queryStr, "command");

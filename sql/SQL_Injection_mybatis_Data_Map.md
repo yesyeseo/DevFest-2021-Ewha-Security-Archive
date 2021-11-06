@@ -22,7 +22,7 @@
 정의된 쿼리문 중 `delStudent` 명령어 선언에서 쿼리문 삽입 인자 중 `$name$`로 전달되는 문자열 그대로 연결해 질의문 생성<br>
 `name`의 값으로 `' OR 'x'='x'` 전달시 `(DELETE STUDENTS WHERE NUM = #num# and Name = '' OR 'x'='x')` 퀴리문 수행되어 테이블의 모든 원소 삭제함
 
-```
+```java
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
@@ -77,7 +77,7 @@
 
 `Name` 인자를 `#name#` 형태로 받도록 수정
 
-```
+```java
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
@@ -139,7 +139,7 @@
 `itemname`을 `name'; DROP items; --`로 주면 쿼리문 수행 결과는 ` SELECT * FROM items WHERE owner=``user name`` AND itemname= ``item name``; `과 `DROP items;` 실행 결과 동일<br>
 -> DB의 items 테이블 정보 삭제됨
 
-```
+```java
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
 "http://www.ibatis.com/dtd/sql-map-2.dtd">
@@ -156,7 +156,7 @@
 `$itemName$` 대신 `#itemName#`사용해 정적 질의문 생성<br>
 `itemname`을 `name'; DROP items; -`하면 `itemname`의 이름이 `name'; DROP items; -`인 항목 찾기 때문에 쿼리문 의도에서 벗어난 동작 방지 가능
 
-```
+```java
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
 "http://www.ibatis.com/dtd/sql-map-2.dtd">
