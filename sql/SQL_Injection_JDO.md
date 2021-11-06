@@ -2,7 +2,7 @@
 
 ### JDO란?
 
-Java Data Objects로, 적절한 검사 과정을 거치지 않고 JDO API의 SQL 또는 JDOQL 질의문 생성을 위한 문자열로 사용하면 프로그래머가 의도하지 않았던 문자열을 전달해 질의문 의미를 왜곡시키거나 구조를 변경하여 임의의 질의 명령어를 수행하는 것을 말한다.
+Java Data Objects로, _**적절한 검사 과정**_을 거치지 않고 JDO API의 SQL 또는 JDOQL 질의문 생성을 위한 문자열로 사용하면 프로그래머가 의도하지 않았던 문자열을 전달해 _**질의문 의미를 왜곡**_시키거나 구조를 변경하여 임의의 질의 명령어를 수행하는 것을 말한다.
 
 **➡️ 안전한 코딩 방법**
 
@@ -10,7 +10,7 @@ Java Data Objects로, 적절한 검사 과정을 거치지 않고 JDO API의 SQL
 
 <BR>
 
-### 예제 1
+### 예제1 - Parameterize Query
 
 ```sql
 SELECT col1 FROM MYTABLE WHERE name=' 입력문 ';
@@ -50,6 +50,8 @@ catch (IOException e) { …… }
 return (List<Contact>) pm.newQuery(query).execute()
 ```
 
+위의 코드에서는 외부에서 입력한 값을 JDO 객체의 인자로 그대로 사용하기 때문에, 쿼리문이 수정될 수 있어 안전하지 않다.
+  
 위의 코드에서 외부 입력부분을 `?` 로 설정하고, 실행 시 해당 인자값이 전달되도록 수정하면 외부의 입력값이 쿼리문을 수정하는 것을 방지 할 수 있다.
 
   
@@ -81,7 +83,7 @@ return (List<Contact>) q.execute(name);
 <br><br>
 
   
-### **예제2**
+### **예제2 - Parameterize Query**
 
 item에 대한 정보를 얻어올 때, itemname의 입력 값을  `name' OR 'a' = 'a'` 로 주게되면 `SELECT * FROM items`를 수행한 결과와 동일하게 된다.
 
@@ -110,6 +112,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 		 
 		PersistenceManager manager = factory.getPersistenceManager();
 		
+  		//query문에 입력값 바로 사용
 		String sql = "SELECT * FROM items WHERE owner = '" + userName + "' AND itemname = '"
 		+ itemName + "'";
 		Query query = pm.newQuery(Query.SQL, sql);
