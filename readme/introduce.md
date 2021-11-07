@@ -16,7 +16,7 @@ GDSC EWHA | 보안과 함께 하는 개발, 시큐어코딩 하루만에 배워�
 
 # GDSC EWHA : Secure Coding Guideline
 
-## **SQL Injection : `SQL 삽입`**
+## ✔️ **SQL Injection : `SQL 삽입`**
 
 가장 **빈번**하게 일어나는 웹 해킹 공격 <br> 웹 어플리케이션 **사용자 입력값**에 **필터링**과 **이스케이프**가 제대로 적용돼 있지 않을 때 발생<br>
 공격자가 **조작된 SQL 질의문을 삽입**해 웹 서버 **DB 정보 열람/유출/조작함**
@@ -30,7 +30,7 @@ GDSC EWHA | 보안과 함께 하는 개발, 시큐어코딩 하루만에 배워�
 
 ---
 
-## **SQL Injection : `JDO`**
+## ✔️ **SQL Injection : `JDO`**
 
 **Java Data Objects**로, **적절한 검사 과정 없이** **의도에 벗어난 질의문 생성**을 위한 문자열을 전달해 질의문 **의미 왜곡**시키거나 **구조 변경**해 임의의 질의 명령어 수행
 [🚀 Learn More](../sql/SQL_Injection_JDO.md)
@@ -40,7 +40,7 @@ GDSC EWHA | 보안과 함께 하는 개발, 시큐어코딩 하루만에 배워�
 | [Parameterize Query 1](../sql/SQL_Injection_JDO.md#%EC%98%88%EC%A0%9C1---parameterize-query) |
 |[Parameterize Query 2](../sql/SQL_Injection_JDO.md#%EC%98%88%EC%A0%9C2---parameterize-query)|
 
-## **SQL Injection : `Persistence`**
+## ✔️ **SQL Injection : `Persistence`**
 
 **J2EE Persistence API** 사용하는 응용프로그램에서 외부의 **입력을 검증 없이 질의문**으로 사용하는 경우, 역시 프로그래머가 의도하지 않았던 **임의의 query 명령어** 수행하는 공격
 [🚀 Learn More](./sql/SQL_Injection_Persistence.md)
@@ -51,7 +51,7 @@ GDSC EWHA | 보안과 함께 하는 개발, 시큐어코딩 하루만에 배워�
 |            [입력값 검증](../sql/SQL_Injection_Persistence.md#%EC%98%88%EC%A0%9C-1---%EC%9E%85%EB%A0%A5%EA%B0%92-%EA%B2%80%EC%A6%9D)             |
 | [문자열 검증 함수](../sql/SQL_Injection_Persistence.md#%EC%98%88%EC%A0%9C2---%EB%AC%B8%EC%9E%90%EC%97%B4-%EA%B2%80%EC%A6%9D-%ED%95%A8%EC%88%98) |
 
-## **SQL Injection : `mybatis Data Map`**
+## ✔️ **SQL Injection : `mybatis Data Map`**
 
 외부에서 **입력된 값**이 **쿼리문의 인자값과 쿼리 명령어에 연결되는 문자열**로 사용하는 경우 공격자 **의도에서 벗어난 문자열 전달**해 쿼리문 **의미 왜곡** 또는 **구조 변경**해 임의의 데이터베이스 명령어 수행 가능
 [🚀 Learn More](./sql/SQL_Injection_mybatis_Data_Map.md)
@@ -63,9 +63,26 @@ GDSC EWHA | 보안과 함께 하는 개발, 시큐어코딩 하루만에 배워�
 
 ---
 
-크로스 사이드 스크립트
+## ✔️ **크로스 사이드 스크립트**
 
-Xquery 삽입
+솰라솰라 이게 간략한 설명~~~
+[🚀 Learn More](../xss/README.md)
+
+|              JAVA               |                C                |
+| :-----------------------------: | :-----------------------------: |
+| [📖](../xss#%EC%A0%95%EC%9D%98) | [📖](../xss#%EC%A0%95%EC%9D%98) |
+|      [예제 설명~~](링크~~)      |       [예제설명~~](링크)        |
+
+---
+
+## ✔️ **Xquery 삽입**
+
+솰라솰라 이게 뭔지 간략한 설명~~~
+[🚀 Learn More](../xss/xquery.md)
+|JAVA|C|
+|:---:|:---:|
+| [📖](개념링크~~) | [📖](개념링크~~~) |
+|[예제 설명~~](링크~~)|[예제설명~~](링크)|
 
 ---
 
@@ -77,9 +94,8 @@ Xquery 삽입
 | :-----------------------------------------------------: | :-------------------------------------------------------------: | :--------------------------------------------------: | :----------------------------------------------------: |
 | [📖](../plaintext/plaintext.md#java-%EC%98%88%EC%A0%9C) | [📖](../plaintext/plaintext.md#android-java-%EC%98%88%EC%A0%9C) | [📖](../plaintext/plaintext.md#c-%EC%98%88%EC%A0%9C) | [📖](../plaintext/plaintext.md#c-%EC%98%88%EC%A0%9C-1) |
 
-=======
-|JAVA|ANDROID Java|C|C#|
-|:---:|:---:|:---:|:---:|
+|                          JAVA                           |                          ANDROID Java                           |                          C                           |                           C#                           |
+| :-----------------------------------------------------: | :-------------------------------------------------------------: | :--------------------------------------------------: | :----------------------------------------------------: |
 | [📖](../plaintext/plaintext.md#java-%EC%98%88%EC%A0%9C) | [📖](../plaintext/plaintext.md#android-java-%EC%98%88%EC%A0%9C) | [📖](../plaintext/plaintext.md#c-%EC%98%88%EC%A0%9C) | [📖](../plaintext/plaintext.md#c-%EC%98%88%EC%A0%9C-1) |
 
 ---
