@@ -18,7 +18,7 @@
 <br>
 
 ## JAVA 예제 :
-### 암호화하지 않은 패스워드 사용 ==> AES 암호화 
+### 암호화하지 않은 패스워드 사용 ➡ AES 암호화 
 
 ```java
 String password = getPassword();
@@ -70,7 +70,7 @@ try {
 <br>
 
 ## Android-JAVA 예제 :
-### 일반 소켓 통신 사용해 데이터 노출 가능 ==> 키를 사용해 암호화
+### 일반 소켓 통신 사용해 데이터 노출 가능 ➡ 키를 사용해 암호화
 
 ```java
 Socket socket = new Socket(hostname, port);
@@ -121,7 +121,7 @@ public void onCreate(Bundle savedInstanceState) {
 <br>
 
 ## C 예제 :
-### 파일에서 읽은 패스워드 암호화 없이 직접 연결 ==> 패스워드 검증 (AES-CBC 암호화)
+### 파일에서 읽은 패스워드 암호화 없이 직접 연결 ➡ 패스워드 검증 (AES-CBC 암호화)
 
 ```c
 fgets(passwd, sizeof(passwd), fp);
@@ -241,7 +241,7 @@ int dbaccess(){
 <br>
 
 ## C# 예제 :
-### 암호화하지 않은 패스워드 포함된 메시지 전송 ==> 암호화 후 전송
+### 암호화하지 않은 패스워드 포함된 메시지 전송 ➡ 암호화 후 전송
 
 ```csharp
 Message.Body = "Your password is: " + Server.HtmlEncode(password);
