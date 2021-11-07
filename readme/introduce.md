@@ -73,16 +73,14 @@ Xquery 삽입
 
 데이터를 **암호화하지 않은 평문**으로 통신 채널을 통해 송수신할 경우, 인증받지 않은 사용자에 의해 발생한 **스니핑**을 통해 보안과 관련된 중요한 **데이터가 노출**될 수 있습니다. [🚀 Learn More](../plaintext/plaintext.md)
 
-<<<<<<< HEAD
-| JAVA | ANDROID Java | C | C# |
+|                          JAVA                           |                          ANDROID Java                           |                          C                           |                           C#                           |
 | :-----------------------------------------------------: | :-------------------------------------------------------------: | :--------------------------------------------------: | :----------------------------------------------------: |
 | [📖](../plaintext/plaintext.md#java-%EC%98%88%EC%A0%9C) | [📖](../plaintext/plaintext.md#android-java-%EC%98%88%EC%A0%9C) | [📖](../plaintext/plaintext.md#c-%EC%98%88%EC%A0%9C) | [📖](../plaintext/plaintext.md#c-%EC%98%88%EC%A0%9C-1) |
+
 =======
 |JAVA|ANDROID Java|C|C#|
 |:---:|:---:|:---:|:---:|
 | [📖](../plaintext/plaintext.md#java-%EC%98%88%EC%A0%9C) | [📖](../plaintext/plaintext.md#android-java-%EC%98%88%EC%A0%9C) | [📖](../plaintext/plaintext.md#c-%EC%98%88%EC%A0%9C) | [📖](../plaintext/plaintext.md#c-%EC%98%88%EC%A0%9C-1) |
-
-> > > > > > > 220b42f59923283e678f99da461f65a870bef7cb
 
 ---
 
