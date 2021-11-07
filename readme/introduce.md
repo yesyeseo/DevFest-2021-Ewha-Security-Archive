@@ -23,10 +23,10 @@ GDSC EWHA | 보안과 함께 하는 개발, 시큐어코딩 하루만에 배워�
 [🚀 Learn More](../sql/SQL_Injection.md)
 |JAVA|C|
 |:---:|:---:|
-| [📖]() | [📖]() |
-| [외부 입력 받아 쿼리 생성](../sql/SQL%20Injection.md#4-%EC%98%88%EC%A0%9C-1) | [외부 입력 받아 쿼리 생성](../sql/SQL%20Injection.md#4-%EC%98%88%EC%A0%9C-1) |
-| [ID와 Password 추출해 쿼리 생성](../sql/SQL%20Injection.md#5-%EC%98%88%EC%A0%9C-2) | [ID와 Password 추출해 쿼리 생성](../sql/SQL%20Injection.md#5-%EC%98%88%EC%A0%9C-2) |
-| [ Blind SQL injection 공격 구문]() | . |
+| [📖](https://github.com/yesyeseo/DevFest-2021-Ewha-Security-Archive/blob/readme/sql/SQL%20Injection.md#1-%EC%A0%95%EC%9D%98) | [📖](https://github.com/yesyeseo/DevFest-2021-Ewha-Security-Archive/blob/readme/sql/SQL%20Injection.md#1-%EC%A0%95%EC%9D%98) |
+| [외부 입력 받아 쿼리 생성](../sql/SQL%20Injection.md#%EC%95%88%EC%A0%84%ED%95%98%EC%A7%80-%EC%95%8A%EC%9D%80-%EC%BD%94%EB%93%9Cjava--tablename%EA%B3%BC-name%EC%97%90-%EB%8C%80%ED%95%9C-%EA%B2%80%EC%A6%9D-%EC%88%98%ED%96%89-x) | [외부 입력 받아 쿼리 생성](../sql/SQL%20Injection.md#%EC%95%88%EC%A0%84%ED%95%98%EC%A7%80-%EC%95%8A%EC%9D%80-%EC%BD%94%EB%93%9Cc--%EC%99%B8%EB%B6%80-%EC%9E%85%EB%A0%A5%EC%9D%B4-sql-%ED%80%B4%EB%A6%AC%EC%97%90-%EC%96%B4%EB%96%A0%ED%95%9C-%EC%B2%98%EB%A6%AC-%EC%97%86%EC%9D%B4-%EC%82%BD%EC%9E%85%EB%90%A8)|
+| [ID와 Password 추출해 쿼리 생성](../sql/SQL%20Injection.md#%EC%95%88%EC%A0%84%ED%95%98%EC%A7%80-%EC%95%8A%EC%9D%80-%EC%BD%94%EB%93%9Cjava) | [ID와 Password 추출해 쿼리 생성](../sql/SQL%20Injection.md#%EC%95%88%EC%A0%84%ED%95%98%EC%A7%80-%EC%95%8A%EC%9D%80-%EC%BD%94%EB%93%9Cc-querystr%EC%9D%98-%EC%99%B8%EB%B6%80-%EC%9E%85%EB%A0%A5%EC%97%90%EC%84%9C-user_id%EC%99%80-password%EC%9D%98-%EA%B0%92%EC%9D%84-%EC%9E%98%EB%9D%BC-%EA%B7%B8%EB%8C%80%EB%A1%9C-sql%EB%AC%B8-%EC%9D%B8%EC%9E%90-%EA%B0%92%EC%9C%BC%EB%A1%9C-%EC%82%AC%EC%9A%A9) |
+| [ Blind SQL injection 공격 구문](..sql/SQL%20Injection.md#6-%EC%98%88%EC%A0%9C-3--blind-sql-injection-%EA%B3%B5%EA%B2%A9-%EA%B5%AC%EB%AC%B8) | . |
 
 ---
 
@@ -36,20 +36,20 @@ GDSC EWHA | 보안과 함께 하는 개발, 시큐어코딩 하루만에 배워�
 [🚀 Learn More](../sql/SQL_Injection_JDO.md)
 |JAVA|
 |:---:|
-| [📖]() |
-| [Parameterize Query 1]() |
-|[Parameterize Query 2]()|
+| [📖](https://github.com/yesyeseo/DevFest-2021-Ewha-Security-Archive/blob/readme/sql/SQL_Injection_JDO.md#jdo%EB%9E%80) |
+| [Parameterize Query 1](../sql/SQL_Injection_JDO.md#%EC%98%88%EC%A0%9C1---parameterize-query) |
+|[Parameterize Query 2](../sql/SQL_Injection_JDO.md#%EC%98%88%EC%A0%9C2---parameterize-query)|
 
 ## **SQL Injection : `Persistence`**
 
 **J2EE Persistence API** 사용하는 응용프로그램에서 외부의 **입력을 검증 없이 질의문**으로 사용하는 경우, 역시 프로그래머가 의도하지 않았던 **임의의 query 명령어** 수행하는 공격
 [🚀 Learn More](./sql/SQL_Injection_Persistence.md)
 
-|         JAVA         |
-| :------------------: |
-|        [📖]()        |
-|   [입력값 검증]()    |
-| [문자열 검증 함수]() |
+|                                                                      JAVA                                                                       |
+| :---------------------------------------------------------------------------------------------------------------------------------------------: |
+|                                  [📖](../sql/SQL_Injection_Persistence.md#api-injection-persistence-%EB%9E%80)                                  |
+|            [입력값 검증](../sql/SQL_Injection_Persistence.md#%EC%98%88%EC%A0%9C-1---%EC%9E%85%EB%A0%A5%EA%B0%92-%EA%B2%80%EC%A6%9D)             |
+| [문자열 검증 함수](../sql/SQL_Injection_Persistence.md#%EC%98%88%EC%A0%9C2---%EB%AC%B8%EC%9E%90%EC%97%B4-%EA%B2%80%EC%A6%9D-%ED%95%A8%EC%88%98) |
 
 ## **SQL Injection : `mybatis Data Map`**
 
@@ -57,9 +57,9 @@ GDSC EWHA | 보안과 함께 하는 개발, 시큐어코딩 하루만에 배워�
 [🚀 Learn More](./sql/SQL_Injection_mybatis_Data_Map.md)
 |JAVA|
 |:---:|
-| [📖]() |
-| [질의문 설정 파일 (XML)]() |
-|[사용자 소유 정보 가져오기]()|
+| [📖](../sql/SQL_Injection_mybatis_Data_Map.md#1-%EC%A0%95%EC%9D%98) |
+| [질의문 설정 파일 (XML)](..sql/SQL_Injection_mybatis_Data_Map.md#3-%EC%98%88%EC%A0%9C-%EC%BD%94%EB%93%9C1) |
+|[사용자 소유 정보 가져오기](../sql/SQL_Injection_mybatis_Data_Map.md#4-%EC%98%88%EC%A0%9C2)|
 
 ---
 
@@ -74,26 +74,27 @@ Xquery 삽입
 데이터를 **암호화하지 않은 평문**으로 통신 채널을 통해 송수신할 경우, 인증받지 않은 사용자에 의해 발생한 **스니핑**을 통해 보안과 관련된 중요한 **데이터가 노출**될 수 있습니다. [🚀 Learn More](../plaintext/plaintext.md)
 
 <<<<<<< HEAD
-|                          JAVA                           |                          ANDROID Java                           |                          C                           |                           C#                           |
+| JAVA | ANDROID Java | C | C# |
 | :-----------------------------------------------------: | :-------------------------------------------------------------: | :--------------------------------------------------: | :----------------------------------------------------: |
 | [📖](../plaintext/plaintext.md#java-%EC%98%88%EC%A0%9C) | [📖](../plaintext/plaintext.md#android-java-%EC%98%88%EC%A0%9C) | [📖](../plaintext/plaintext.md#c-%EC%98%88%EC%A0%9C) | [📖](../plaintext/plaintext.md#c-%EC%98%88%EC%A0%9C-1) |
 =======
 |JAVA|ANDROID Java|C|C#|
 |:---:|:---:|:---:|:---:|
-| [📖](../plaintext/plaintext.md#java-%EC%98%88%EC%A0%9C) | [📖](../plaintext/plaintext.md#android-java-%EC%98%88%EC%A0%9C) |  [📖](../plaintext/plaintext.md#c-%EC%98%88%EC%A0%9C) | [📖](../plaintext/plaintext.md#c-%EC%98%88%EC%A0%9C-1) |
->>>>>>> 220b42f59923283e678f99da461f65a870bef7cb
+| [📖](../plaintext/plaintext.md#java-%EC%98%88%EC%A0%9C) | [📖](../plaintext/plaintext.md#android-java-%EC%98%88%EC%A0%9C) | [📖](../plaintext/plaintext.md#c-%EC%98%88%EC%A0%9C) | [📖](../plaintext/plaintext.md#c-%EC%98%88%EC%A0%9C-1) |
+
+> > > > > > > 220b42f59923283e678f99da461f65a870bef7cb
 
 ---
 
 ## ✔️ `패스워드` `평문` 저장
 
-패스워드를 비롯한 **중요 데이터**가 **암호화되지 않은 평문 텍스트**의 형태로 저장되면 암호가 *외부에 직접* 드러날 수 있어 **기밀성**이 보장되지 못하고 암호가 저장된 파일에 *접근할 수 있는 사람이면 누구*나 암호를 알아낼 수 있어 **무결성** 또한 보장되지 못합니다. [🚀 Learn More](../plaintext/password.md)
+패스워드를 비롯한 **중요 데이터**가 **암호화되지 않은 평문 텍스트**의 형태로 저장되면 암호가 _외부에 직접_ 드러날 수 있어 **기밀성**이 보장되지 못하고 암호가 저장된 파일에 *접근할 수 있는 사람이면 누구*나 암호를 알아낼 수 있어 **무결성** 또한 보장되지 못합니다. [🚀 Learn More](../plaintext/password.md)
 
-|JAVA|C|
-|:---:|:---:|
+|                          JAVA                          |                           C                            |
+| :----------------------------------------------------: | :----------------------------------------------------: |
 | [📖](../plaintext/password.md#java-%EC%98%88%EC%A0%9C) | [📖](../../plaintext/password.md#c-%EC%98%88%EC%A0%9C) |
-| 패스워드 정보 평문으로 DB 저장 취약점 | 패스워드를 파일에서 읽어 직접 DB 연결 취약점 |
-| | 패스워드 입력 미검증 취약점 |
+|         패스워드 정보 평문으로 DB 저장 취약점          |      패스워드를 파일에서 읽어 직접 DB 연결 취약점      |
+|                                                        |              패스워드 입력 미검증 취약점               |
 
 ---
 
