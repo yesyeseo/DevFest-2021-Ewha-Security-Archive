@@ -77,11 +77,6 @@ Xquery 삽입
 | :-----------------------------------------------------: | :-------------------------------------------------------------: | :--------------------------------------------------: | :----------------------------------------------------: |
 | [📖](../plaintext/plaintext.md#java-%EC%98%88%EC%A0%9C) | [📖](../plaintext/plaintext.md#android-java-%EC%98%88%EC%A0%9C) | [📖](../plaintext/plaintext.md#c-%EC%98%88%EC%A0%9C) | [📖](../plaintext/plaintext.md#c-%EC%98%88%EC%A0%9C-1) |
 
-=======
-|JAVA|ANDROID Java|C|C#|
-|:---:|:---:|:---:|:---:|
-| [📖](../plaintext/plaintext.md#java-%EC%98%88%EC%A0%9C) | [📖](../plaintext/plaintext.md#android-java-%EC%98%88%EC%A0%9C) | [📖](../plaintext/plaintext.md#c-%EC%98%88%EC%A0%9C) | [📖](../plaintext/plaintext.md#c-%EC%98%88%EC%A0%9C-1) |
-
 ---
 
 ## ✔️ `패스워드` `평문` 저장
