@@ -5,6 +5,7 @@
 - 데이터를 평문으로 통신 채널을 통해 송수신할 경우, 인증받지 않은 사용자에 의해 발생한 `스니핑`을 통해 보안과 관련된 중요한  데이터가 노출될 수 있다.
     - `스니핑` : 네트워크상에서 다른 상대방들의 패킷 교환을 엿듣는 행위. ex) 전화 도청
     
+<br>
 
 ## 안전한 코딩기법
 
@@ -14,7 +15,10 @@
     - 보안 채널을 사용하거나 브라우저 쿠키에 중요 데이터를 저장하는 경우, `setSecure(true)` 메소드를 통해 쿠키 객체에 보안속성을 설정하여 중요정보 노출을 방지할 수 있다.
     - 보안속성이 설정된 쿠키는 HTTP로는 전송되지 않으므로, 중요 데이터를 저장한 쿠키를 HTTP로 전송하기 위해서는 보안 속성을 대신하여 반드시 암호화를 적용해야 한다.
 
-## JAVA 예제
+<br>
+
+## JAVA 예제 :
+### 암호화하지 않은 패스워드 사용 ==> AES 암호화 
 
 ```java
 String password = getPassword();
@@ -63,7 +67,10 @@ try {
 ……
 ```
 
-## Android-JAVA 예제
+<br>
+
+## Android-JAVA 예제 :
+### 일반 소켓 통신 사용해 데이터 노출 가능 ==> 키를 사용해 암호화
 
 ```java
 Socket socket = new Socket(hostname, port);
@@ -93,7 +100,7 @@ SocketFactory socketFactory = SSLSocketFactory.getDefault();
 Socket socket = socketFactory.createSocket(hostname, port);
 ```
 
-민감한 정보를 네트워크를 통하여 서버에 전송하기 전에 최소한 128비트 길이의 키를 이용하여 암호하는 것이 바람직하다.
+민감한 정보를 네트워크를 통하여 서버에 전송하기 전에 최소한 128비트 길이의 키를 이용하여 암호화하는 것이 바람직하다.
 
 `안전한 코드`
 
@@ -111,15 +118,18 @@ public void onCreate(Bundle savedInstanceState) {
 }
 ```
 
-## C 예제
+<br>
 
-```csharp
+## C 예제 :
+### 파일에서 읽은 패스워드 암호화 없이 직접 연결 ==> 패스워드 검증 (AES-CBC 암호화)
+
+```c
 fgets(passwd, sizeof(passwd), fp);
 ```
 
 패스워드를 파일에서 읽어 오고 있다.
 
-```csharp
+```c
 (SQLCHAR*) passwd,
 ```
 
@@ -228,7 +238,10 @@ int dbaccess(){
 }
 ```
 
-## C# 예제
+<br>
+
+## C# 예제 :
+### 암호화하지 않은 패스워드 포함된 메시지 전송 ==> 암호화 후 전송
 
 ```csharp
 Message.Body = "Your password is: " + Server.HtmlEncode(password);
