@@ -8,7 +8,7 @@
 
 ## 2) 공격 흐름도
 
-![sql 공격 흐름도](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=http%3A%2F%2Fcfile2.uf.tistory.com%2Fimage%2F257C5938590F1A022239B4)
+![sql 공격 흐름도](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=http%3A%2F%2Fcfile2.uf.tistory.com%2Fimage%2F257C5938590F1A022239B4)<br>
 [출처] JAVA 시큐어코딩 가이드 P.3
 
 - 사용자가 입력한 값을 필터링 없이 넘겨 받은 취약한 웹 어플리케이션은 **동적 쿼리(Dynamic Query)** 생성
@@ -31,7 +31,7 @@
 
 <br>
 
-**안전하지 않은 코드(java)** : <br>`tablename`과 `name`에 대한 검증 수행 X
+### **안전하지 않은 코드(java)** : <br>`tablename`과 `name`에 대한 검증 수행 X
 
 ```java
 PreparedStatement stmt = null;
@@ -93,7 +93,7 @@ finally { …… }
 
 ```
 
-**안전하지 않은 코드(C)** : <br>외부 입력이 SQL 퀴리에 어떠한 처리 없이 삽입됨
+### **안전하지 않은 코드(C)** : <br>외부 입력이 SQL 퀴리에 어떠한 처리 없이 삽입됨
 
 ```C
 #include <stdlib.h>
@@ -122,7 +122,8 @@ void Sql_process(SQLHSTMT sqlh)
 
 <br>
 
-**안전하지 않은 코드(java)**:<br>
+### **안전하지 않은 코드(java)**:<br>
+
 사용자 ID를 guest' OR ' a'='a'-- 로 설정하여 생성된 쿼리: <br>
 `SELECT * FROM members WHERE userId = 'guest' OR 'a'='a'-- AND password = ''`<br>
 WHERE절 항상 참 -> 올바른 암호가 아니여도 사용자 정보 조회/열람 가능
@@ -254,7 +255,7 @@ public class SqlInjectionSample extends HttpServlet
 
 <br>
 
-**안전하지 않은 코드(C)**:<br> queryStr의 외부 입력에서 `user_id`와 `password`의 값을 잘라 그대로 SQL문 인자 값으로 사용
+### **안전하지 않은 코드(C)**:<br> queryStr의 외부 입력에서 `user_id`와 `password`의 값을 잘라 그대로 SQL문 인자 값으로 사용
 
 ```C
 static SQLHSTMT statmentHandle;
