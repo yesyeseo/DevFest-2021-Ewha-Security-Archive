@@ -73,7 +73,7 @@ GDSC EWHA | 보안과 함께 하는 개발, 시큐어코딩 하루만에 배워�
 | :-----------------------------: | :-----------------------------: |
 | [📖](../xss/JAVA) | [📖](../xss/C) |
 |      [안전하지 않은 Java 코드](../xss/JAVA/non-secure-code.java)      |       [안전하지 않은 C 코드](../xss/C/non-secure-code.c)        |
-|      [Java 시큐어 코드](../xss/JAVA/secure-code.java)      |       [C 시큐어 코드](../xss/C/secure-code.c)        |
+|      [Java 시큐어 코드](../xss/JAVA/secure-code.java)     |       [C 시큐어 코드](../xss/C/secure-code.c)        |
 
 ---
 
