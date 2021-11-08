@@ -138,7 +138,7 @@ GDSC EWHA | 보안과 함께 하는 개발, 시큐어코딩 하루만에 배워�
 
 
 ---
-# GDSC EWHA TIMELINE
+## GDSC EWHA TIMELINE
 
 |     시간      |                                   주제                                    |                           강연자                           |
 | :-----------: | :-----------------------------------------------------------------------: | :--------------------------------------------------------: |
@@ -147,3 +147,14 @@ GDSC EWHA | 보안과 함께 하는 개발, 시큐어코딩 하루만에 배워�
 | 19:40~20:20 |                          Secure Coding Guideline                          | 이채영, 전세연<br>2020 소프트웨어 개발보안 경진대회 대상팀 |
 |  20:20~21:00  | 안전하고 빠른 코드를 얻기 위한 우리의 몸부림(TDD, Code Converage Profile) |              최원혁<br> (주)누리랩 대표 이사               |
 
+---
+
+### Reference
+
+### Organizer
+
+[**GDSC EWHA**](https://github.com/gdscewha-3rd) | [구민정](https://github.com/mj982) [김소미](https://github.com/rlathal009) [김윤서](https://github.com/ottl-seo)
+[배수현](https://github.com/SoohyeonB)
+[윤하은](https://github.com/Haeun-Y) [이은빈](https://github.com/binable43)
+[장아연](https://github.com/JangAyeon) [장예서](https://github.com/yesyeseo)
+[하수민](https://github.com/minha62)
