@@ -4,17 +4,20 @@ GDSC EWHA | 보안과 함께 하는 개발, 시큐어코딩 하루만에 배워�
 
 <br>
 
-# 일정
+# Table of Contents
 
-|     시간      |                                   주제                                    |                           강연자                           |
-| :-----------: | :-----------------------------------------------------------------------: | :--------------------------------------------------------: |
-| 19:00 ~ 19:10 |                                  오프닝                                   |                             .                              |
-| 19:10 ~ 19:40 |            실 사례를 통해 알아보는 보안 개발의 필요성과 해결책            |                 라도훈<br>스타트업 SERENDI                 |
-| 19:40 ~ 20:10 |                          Secure Coding Guideline                          | 이채영, 전세연<br>2020 소프트웨어 개발보안 경진대회 대상팀 |
-| 20:10 ~ 20:20 |         개발에 바로 활용 할 수 있는 Secure Coding Guideline 소개          |                         GDSC EWHA                          |
-|  20:20~21:00  | 안전하고 빠른 코드를 얻기 위한 우리의 몸부림(TDD, Code Converage Profile) |              최원혁<br> (주)누리랩 대표 이사               |
+- [SQL Injection: SQL 삽입](./#%EF%B8%8F-sql-injection--sql-삽입)
+- [SQL Injection: JDO](./#%EF%B8%8F-sql-injection--jdo)
+- [SQL Injection: Persistence](./#%EF%B8%8F-sql-injection--persistence)
+- [SQL Injection: mybatis Data Map](./#%EF%B8%8F-sql-injection--mybatis-data-map)
+- [XSS Attack(크로스 사이드 스크립트)](./#%EF%B8%8F-xss-공격-크로스-사이드-스크립트)
+- [Xquery 삽입](./#%EF%B8%8F-xquery-삽입)
+- [사용자 중요 정보 평문 저장](./#%EF%B8%8F-사용자-중요-정보-평문-저장)
+- [패스워드 평문 저장](./#%EF%B8%8F-패스워드-평문-저장)
+- [오류 메시지를 통한 정보 도출 방지](./#%EF%B8%8F-오류-메시지를-통한-정보-도출-방지)
+- [쿠키를 통한 정보 노출 방지](./#%EF%B8%8F-쿠키를-통한-정보-노출)
 
-# GDSC EWHA : Secure Coding Guideline
+---
 
 ## ✔️ **SQL Injection : `SQL 삽입`**
 
@@ -96,13 +99,6 @@ GDSC EWHA | 보안과 함께 하는 개발, 시큐어코딩 하루만에 배워�
 | :-----------------------------------------------------: | :-------------------------------------------------------------: | :--------------------------------------------------: | :----------------------------------------------------: |
 | [📖](../plaintext/plaintext.md#java-%EC%98%88%EC%A0%9C) | [📖](../plaintext/plaintext.md#android-java-%EC%98%88%EC%A0%9C) | [📖](../plaintext/plaintext.md#c-%EC%98%88%EC%A0%9C) | [📖](../plaintext/plaintext.md#c-%EC%98%88%EC%A0%9C-1) |
 
-<<<<<<< HEAD
-|                          JAVA                           |                          ANDROID Java                           |                          C                           |                           C#                           |
-| :-----------------------------------------------------: | :-------------------------------------------------------------: | :--------------------------------------------------: | :----------------------------------------------------: |
-| [📖](../plaintext/plaintext.md#java-%EC%98%88%EC%A0%9C) | [📖](../plaintext/plaintext.md#android-java-%EC%98%88%EC%A0%9C) | [📖](../plaintext/plaintext.md#c-%EC%98%88%EC%A0%9C) | [📖](../plaintext/plaintext.md#c-%EC%98%88%EC%A0%9C-1) |
-
-=======
->>>>>>> d6705e92d3055c2415c276a12fcaba8ada708f58
 ---
 
 ## ✔️ `패스워드` `평문` 저장
@@ -139,3 +135,15 @@ GDSC EWHA | 보안과 함께 하는 개발, 시큐어코딩 하루만에 배워�
 |                                                                                                                    [📖](../cookie/javacookies.md)                                                                                                                    |     |
 | [쿠키 유효 기간 설정 시 사용자 미검증 취약점](../cookie/javacookies.md#-%EC%99%B8%EB%B6%80-%EC%9E%85%EB%A0%A5%EC%9D%B4-%EC%BF%A0%ED%82%A4-%EC%9C%A0%ED%9A%A8-%EA%B8%B0%EA%B0%84-%EC%84%A4%EC%A0%95%EC%97%90-%EA%B7%B8%EB%8C%80%EB%A1%9C-%EC%82%AC%EC%9A%A9%EB%90%A8) |     |
 |                                  [쿠키 유효 기간 상숫값 설정 취약점](../cookie/javacookies.md#-%EC%BF%A0%ED%82%A4-%EC%9C%A0%ED%9A%A8-%EC%8B%9C%EA%B0%84-%EC%84%A4%EC%A0%95%EC%9D%B4-%EC%83%81%EC%88%AB%EA%B0%92%EC%9D%B4-%EB%90%A8)                                  |     |
+
+
+---
+# GDSC EWHA TIMELINE
+
+|     시간      |                                   주제                                    |                           강연자                           |
+| :-----------: | :-----------------------------------------------------------------------: | :--------------------------------------------------------: |
+| 19:00~19:10 |                                  오프닝 & 개발에 바로 활용할 수 있는 Secure Coding Guideline 소개                                    | GDSC EWHA                                                           |
+| 19:10~19:45 |            실 사례를 통해 알아보는 보안 개발의 필요성과 해결책            |                 라도훈<br>스타트업 SERENDI                 |
+| 19:40~20:20 |                          Secure Coding Guideline                          | 이채영, 전세연<br>2020 소프트웨어 개발보안 경진대회 대상팀 |
+|  20:20~21:00  | 안전하고 빠른 코드를 얻기 위한 우리의 몸부림(TDD, Code Converage Profile) |              최원혁<br> (주)누리랩 대표 이사               |
+
