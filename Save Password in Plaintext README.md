@@ -15,6 +15,7 @@
 <br>
 
 ## java 예제
+### 패스워드 정보의 DB 저장
 * 안전하지 못한 코드 : **인증을 통과한 사용자**의 패스워드 정보가 **평문**으로 DB에 저장된다. 
 ```java
 String id = request.getParameter("id");
@@ -94,6 +95,7 @@ stmt.executeUpdate();
 <br>
 
 ## C 예제
+### 1. 파일에서 읽어온 패스워드와 DB 연결
 * 안전하지 못한 코드 : 패스워드를 파일에서 읽어서 직접 DB 연결에 사용하고 있다. 이것은 패스워드를 암호화 하고 있지 않음을 의미한다. 
 ```c
 int dbaccess()
@@ -141,6 +143,7 @@ int dbaccess()
 	fgets(passwd, sizeof(passwd), fp);
 	fclose(fp);
 
+	//패스워드 검증 과정
 	verifiedPwd = verify(passwd);
 	SQLAllocHandle(SQL_HANDLE_ENV, SQL_NULL_HANDLE, &henv);
 	SQLAllocHandle(SQL_HANDLE_DBC, henv, &hdbc);
@@ -164,6 +167,7 @@ int dbaccess()
 </details>
  <br>
  
+ ### 2. 키보드로부터 읽어온 패스워드와 DB
  * 안전하지 못한 코드 : 사용자명과 패스워드를 키보드로부터 읽어서 문자열을 그대로 DB 연결에 사용하고 있다. 
  
  ```C
