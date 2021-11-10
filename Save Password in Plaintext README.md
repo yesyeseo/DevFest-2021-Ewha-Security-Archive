@@ -330,3 +330,15 @@ void loadDbUserInfo(char  **  userId, char ** password)
 </div>
 </details>
  <br>
+ <br>
+<details>
+<summary>출처</summary>
+<div markdown="1">   
+https://docs.oracle.com/javaee/7/api/overview-summary.html<br>
+https://docs.microsoft.com/ko-kr/documentation/<br>
+https://seed.kisa.or.kr/kisa/Board/21/detailView.do<br>
+https://gmlwjd9405.github.io/2018/10/27/webserver-vs-was.html<br>
+https://m.blog.naver.com/ka28/221985380809
+</div>
+</details>
+ <br>
