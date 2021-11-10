@@ -333,7 +333,9 @@ void loadDbUserInfo(char  **  userId, char ** password)
  <br>
 <details>
 <summary>출처</summary>
-<div markdown="1">   
+<div markdown="1">
+『전자정부 SW 개발, 운영자를 위한 C  시큐어 코딩 가이드』, 행정자치부, 한국 인터넷진흥원<br>
+『전자정부 SW 개발, 운영자를 위한 소프트웨어 개발보안 가이드』, 행정안전부, 한국 인터넷진흥원<br>
 https://docs.oracle.com/javaee/7/api/overview-summary.html<br>
 https://docs.microsoft.com/ko-kr/documentation/<br>
 https://seed.kisa.or.kr/kisa/Board/21/detailView.do<br>
