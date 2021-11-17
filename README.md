@@ -18,5 +18,5 @@
 | 사용자 중요 정보 평문 저장 | [윤하은](https://github.com/Haeun-Y) [하수민](https://github.com/minha62) |
 | 패드워드 평문 저장 | [윤하은](https://github.com/Haeun-Y) [하수민](https://github.com/minha62) |
 | 오류 메시지 통한 정보 도출 | [장예서](https://github.com/yesyeseo) |
-| [보안 속성 미적용으로 인한 쿠키 노출](../tree/cookie) | [장예서](https://github.com/yesyeseo) |
+| [보안 속성 미적용으로 인한 쿠키 노출](../../tree/cookie) | [장예서](https://github.com/yesyeseo) |
 
